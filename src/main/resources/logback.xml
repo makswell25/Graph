@@ -1,0 +1,17 @@
+<configuration>
+    <appender name = "LOG_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/logFile.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class = "ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <root level="warn">
+        <appender-ref ref="LOG_FILE" level="warn" />
+    </root>
+</configuration>
